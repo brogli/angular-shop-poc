@@ -1,10 +1,10 @@
 import { Product } from './product';
 
-interface ProductsToCategories {
+export interface CategoryToProductsMap {
   [key: string]: Product[];
 }
 
-export const PRODUCTS: ProductsToCategories = {
+export const PRODUCTS: CategoryToProductsMap = {
   "PRODUCTS_CAT1":
     [
       { id: 11, name: 'Product 1 of category 1', description: 'This is a product description.' },
