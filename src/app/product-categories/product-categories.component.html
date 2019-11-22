@@ -1,7 +1,8 @@
 <h2>Product Categories</h2>
 <ul class="product-categories">
     <li *ngFor="let productCategory of productCategories" (click)="onSelect(productCategory)">
-        <span class="badge">{{productCategory.id}}</span> {{productCategory.name}}
+        <span class="badge">{{productCategory.id}}</span>
+        <a routerLink="/product-list/{{productCategory.id}}">{{productCategory.name}}</a>
     </li>
 </ul>
 <div *ngIf="selectedProductCategory">

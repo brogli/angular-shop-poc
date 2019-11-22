@@ -11,6 +11,12 @@ import { MessageService } from './message.service';
 })
 export class ProductService {
 
+  getProductsById(id: string): Observable<Product[]> {
+    console.log('fetched id ' + id);
+    console.log('products is: ' + PRODUCTS[id]);
+    return of(PRODUCTS[id]);
+  }
+
   constructor(private messageService: MessageService) { }
 
   getProducts(): Observable<CategoryToProductsMap> {
@@ -18,6 +24,4 @@ export class ProductService {
     this.messageService.add('ProductService: fetched products');
     return of(PRODUCTS);
   }
-
-
 }
