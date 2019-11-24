@@ -42,16 +42,18 @@ export class CartComponent implements OnInit {
 
   purchaseCart() {
     let currentProductsInCart: Product[] = this.getCurrentProductsInCart();
+    this.messageService.add('You hypothetically purchased: ', 5000);
     let message: string = '';
+
     for (let product of currentProductsInCart) {
+      let message: string = '';
       message += 'Name: ';
       message += product.name;
       message += ', Price: ';
       message += product.price;
-      message += '<br>';
-
+      this.messageService.add(message, 5000);
     }
-    this.messageService.add('You hypothetically purchased these products: <br>' + message, 5000);
+
     this.clearCart();
   }
 
