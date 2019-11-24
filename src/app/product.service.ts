@@ -10,6 +10,7 @@ import { MessageService } from './message.service';
 })
 export class ProductService {
 
+  constructor(private messageService: MessageService) { }
 
   getProductById(id: number): Observable<Product> {
     let searchedProduct;
@@ -26,8 +27,6 @@ export class ProductService {
   getProductsById(id: number): Observable<Product[]> {
     return of(PRODUCTS.get(id));
   }
-
-  constructor(private messageService: MessageService) { }
 
   getProducts(): Observable<Map<number, Product[]>> {
     // TODO: send the message _after_ fetching the products
