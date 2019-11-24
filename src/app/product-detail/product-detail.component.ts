@@ -34,6 +34,11 @@ export class ProductDetailComponent implements OnInit {
 
   saveProductIdToCart(productId: number) {
     this.localStorageService.storeProductIdInCart(productId);
-    this.messageService.add('Saved Product with ID: ' + productId);
+    this.messageService.add('Saved to cart: Product with ID ' + productId);
+  }
+
+  saveProductIdToWatchlist(productId: number) {
+    this.localStorageService.storeProductIdInWatchlist(productId);
+    this.messageService.add('Saved to watchlist: Product with ID ' + productId);
   }
 }

@@ -17,7 +17,6 @@ export class CartComponent implements OnInit {
     private productService: ProductService,
     private localStorageService: LocalStorageService,
     private messageService: MessageService,
-
   ) { }
 
   ngOnInit() {

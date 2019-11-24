@@ -14,6 +14,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ShopMenuComponent } from './shop-menu/shop-menu.component';
 import { LocalStorageService } from './local-storage.service';
 import { CartComponent } from './cart/cart.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CartComponent } from './cart/cart.component';
     WelcomeComponent,
     ShopMenuComponent,
     CartComponent,
+    WatchlistComponent,
   ],
   imports: [
     BrowserModule,

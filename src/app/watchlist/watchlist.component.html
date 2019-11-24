@@ -1,0 +1,19 @@
+<h2>Watchlist</h2>
+<section *ngIf="currentProductsInWatchlist">
+    <ul class="list-group list-group-flush">
+        <div *ngFor="let product of currentProductsInWatchlist" class="list-group-item ">
+            <div class="row">
+                <div class="col-sm-8">
+                    <a routerLink="/product-detail/{{product.id}}">{{product.name}}</a>
+                </div>
+                <div class="col-sm-4">
+                    Hypothetical Price: {{product.price}}
+                </div>
+            </div>
+        </div>
+    </ul>
+    <br><br>
+    <button type="button" class="btn btn-success btn-lg" (click)="addWatchListToCart()">Add watchlist to
+        cart</button><br><br>
+    <button type="button" class="btn btn-danger btn-lg" (click)="clearWatchlist()">Delete watchlist contents</button>
+</section>
