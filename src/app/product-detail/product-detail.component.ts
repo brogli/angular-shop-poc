@@ -4,6 +4,7 @@ import { LocalStorageService } from '../local-storage.service';
 
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -17,6 +18,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
+    private messageService: MessageService,
     private localStorageService: LocalStorageService,
     private route: ActivatedRoute,
     private router: Router,
@@ -32,5 +34,6 @@ export class ProductDetailComponent implements OnInit {
 
   saveProductIdToCart(productId: number) {
     this.localStorageService.storeProductIdInCart(productId);
+    this.messageService.add('Saved Product with ID: ' + productId);
   }
 }

@@ -1,0 +1,9 @@
+
+#messagebubble {
+    position: fixed;
+    z-index: 100;
+    top: 30%;
+    width: 100%;
+    left: 0%;
+
+}

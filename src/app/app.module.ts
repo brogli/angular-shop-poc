@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { StorageServiceModule } from 'ngx-webstorage-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ProductCategoriesComponent } from './product-categories/product-categories.component';
@@ -30,6 +31,7 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     AppRoutingModule,
     StorageServiceModule,
+    BrowserAnimationsModule,
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]
