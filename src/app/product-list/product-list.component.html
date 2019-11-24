@@ -1,8 +1,15 @@
 <h2>Product List</h2>
-<section *ngIf="products">
+<section *ngIf="products" class="list-group list-group-flush">
     <ul class="product-list">
-        <li *ngFor="let product of products" routerLink="/product-detail/{{product.id}}">
-            <span class="badge">{{product.id}}</span> {{product.name}} <br>
-        </li>
+        <div *ngFor="let product of products" class="list-group-item ">
+            <div class="row">
+                <div class="col-sm-8">
+                    <a routerLink="/product-detail/{{product.id}}">{{product.name}}</a>
+                </div>
+                <div class="col-sm-4">
+                    Hypothetical Price: {{product.price}}
+                </div>
+            </div>
+        </div>
     </ul>
 </section>
