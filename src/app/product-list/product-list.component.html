@@ -1,19 +1,8 @@
 <h2>Product List</h2>
-<ul class="product-categories">
-    <li *ngFor="let category of allProducts | keyvalue">
-        <ul class="product-list">
-            <li *ngFor="let product of category.value" (click)="onSelect(product)">
-                <span class="badge">{{product.id}}</span> {{product.name}} <br>
-            </li>
-        </ul>
-    </li>
-</ul>
 <section *ngIf="products">
     <ul class="product-list">
-        <li *ngFor="let product of products" (click)="onSelect(product)">
+        <li *ngFor="let product of products" routerLink="/product-detail/{{product.id}}">
             <span class="badge">{{product.id}}</span> {{product.name}} <br>
         </li>
     </ul>
 </section>
-
-<app-product-detail [product]="selectedProduct"></app-product-detail>

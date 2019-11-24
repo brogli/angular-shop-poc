@@ -8,7 +8,6 @@ import { Product } from '../product';
 
 
 import { ProductService } from '../product.service';
-import { CategoryToProductsMap } from '../mock-products';
 
 @Component({
   selector: 'app-product-list',
@@ -17,13 +16,7 @@ import { CategoryToProductsMap } from '../mock-products';
 })
 export class ProductListComponent implements OnInit {
 
-  allProducts: CategoryToProductsMap;
   products: Product[];
-
-  selectedProduct: Product;
-  onSelect(product: Product): void {
-    this.selectedProduct = product;
-  }
 
   constructor(
     private productService: ProductService,
@@ -34,18 +27,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params: ParamMap) =>
-        this.productService.getProductsById(params.get('id'))
+        this.productService.getProductsById(+params.get('id'))
           .subscribe(products => this.products = products));
 
-  }
-  /*
-    getProductsById(urlParams: ParamMap): void {
-      this.productService.getProductsById(urlParams.get('id'))
-       .subscribe(products => this.products = products));
-    }*/
-
-  getProducts(): void {
-    this.productService.getProducts()
-      .subscribe(products => this.allProducts = products);
   }
 }
