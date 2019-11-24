@@ -19,4 +19,8 @@ export class LocalStorageService {
   public getProductIdsInCart() {
     return this.storage.get(STORAGE_KEY_CART) || [];
   }
+
+  public clearCart() {
+    this.storage.remove(STORAGE_KEY_CART);
+  }
 }

@@ -29,6 +29,5 @@ export class ProductListComponent implements OnInit {
       (params: ParamMap) =>
         this.productService.getProductsByCategoryId(+params.get('id'))
           .subscribe(products => this.products = products));
-
   }
 }

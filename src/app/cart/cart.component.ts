@@ -31,4 +31,9 @@ export class CartComponent implements OnInit {
     return currentProductsInCart;
   }
 
+  clearCart() {
+    this.localStorageService.clearCart();
+    this.products = [];
+  }
+
 }

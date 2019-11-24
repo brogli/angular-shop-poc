@@ -1,6 +1,6 @@
 <h2>Cart</h2>
-<section *ngIf="products" class="list-group list-group-flush">
-    <ul class="product-list">
+<section *ngIf="products">
+    <ul class="list-group list-group-flush">
         <div *ngFor="let product of products" class="list-group-item ">
             <div class="row">
                 <div class="col-sm-8">
@@ -12,4 +12,5 @@
             </div>
         </div>
     </ul>
+    <button type="button" class="btn btn-primary btn-lg" (click)="clearCart()">Delete cart contents</button>
 </section>
