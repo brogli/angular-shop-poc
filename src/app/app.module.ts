@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
+import { StorageServiceModule } from 'ngx-webstorage-service';
 
 import { AppComponent } from './app.component';
 import { ProductCategoriesComponent } from './product-categories/product-categories.component';
@@ -10,6 +11,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { MessagesComponent } from './messages/messages.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ShopMenuComponent } from './shop-menu/shop-menu.component';
+import { LocalStorageService } from './local-storage.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { ShopMenuComponent } from './shop-menu/shop-menu.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StorageServiceModule,
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

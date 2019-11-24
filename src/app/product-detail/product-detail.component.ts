@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { LocalStorageService } from '../local-storage.service';
 
 import { Product } from '../product';
 import { ProductService } from '../product.service';
@@ -9,12 +10,14 @@ import { ProductService } from '../product.service';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
+
 export class ProductDetailComponent implements OnInit {
 
   product: Product;
 
   constructor(
     private productService: ProductService,
+    private localStorageService: LocalStorageService,
     private route: ActivatedRoute,
     private router: Router,
   ) { }
@@ -27,4 +30,7 @@ export class ProductDetailComponent implements OnInit {
 
   }
 
+  saveProductIdToCart(productId: number) {
+    this.localStorageService.storeProductIdInCart(productId);
+  }
 }
