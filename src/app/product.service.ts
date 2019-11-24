@@ -24,8 +24,8 @@ export class ProductService {
     return of(searchedProduct);
   }
 
-  getProductsById(id: number): Observable<Product[]> {
-    return of(PRODUCTS.get(id));
+  getProductsByCategoryId(categoryId: number): Observable<Product[]> {
+    return of(PRODUCTS.get(categoryId));
   }
 
   getProducts(): Observable<Map<number, Product[]>> {

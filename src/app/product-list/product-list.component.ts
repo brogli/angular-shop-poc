@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params: ParamMap) =>
-        this.productService.getProductsById(+params.get('id'))
+        this.productService.getProductsByCategoryId(+params.get('id'))
           .subscribe(products => this.products = products));
 
   }

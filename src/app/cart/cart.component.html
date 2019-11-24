@@ -1,0 +1,15 @@
+<h2>Cart</h2>
+<section *ngIf="products" class="list-group list-group-flush">
+    <ul class="product-list">
+        <div *ngFor="let product of products" class="list-group-item ">
+            <div class="row">
+                <div class="col-sm-8">
+                    <a routerLink="/product-detail/{{product.id}}">{{product.name}}</a>
+                </div>
+                <div class="col-sm-4">
+                    Hypothetical Price: {{product.price}}
+                </div>
+            </div>
+        </div>
+    </ul>
+</section>

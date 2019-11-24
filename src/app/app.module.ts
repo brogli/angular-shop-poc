@@ -12,6 +12,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ShopMenuComponent } from './shop-menu/shop-menu.component';
 import { LocalStorageService } from './local-storage.service';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LocalStorageService } from './local-storage.service';
     MessagesComponent,
     WelcomeComponent,
     ShopMenuComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,4 +15,8 @@ export class LocalStorageService {
     currentCart.push(productId);
     this.storage.set(STORAGE_KEY_CART, currentCart);
   }
+
+  public getProductIdsInCart() {
+    return this.storage.get(STORAGE_KEY_CART) || [];
+  }
 }
